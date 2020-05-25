@@ -1,0 +1,19 @@
+@import "../../../Common/Scss/main";
+
+.input {
+  display: flex;
+  flex-direction: column;
+
+  &__item {
+    margin-top: 0.2rem;
+    padding: 0.6rem 1rem;
+    font-size: 1.2rem;
+    border: 1px solid $color_gray;
+    @include transition(border);
+
+    &:hover,
+    &:focus {
+      border: 1px solid $color_gray_dark;
+    }
+  }
+}

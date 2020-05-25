@@ -1,0 +1,15 @@
+@import "../../Common/Scss/main";
+
+.product-add {
+  @include container;
+  max-width: 300px;
+
+  .input {
+    margin-top: 1rem;
+  }
+
+  .button {
+    margin-top: 1rem;
+    width: 100%;
+  }
+}

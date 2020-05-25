@@ -3,8 +3,12 @@
 .shop {
   @include container;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   grid-gap: 1rem;
+
+  @include media_interval($media768, $media1024) {
+    grid-template-columns: repeat(5, 1fr);
+  }
 
   @include media_interval($media450, $media768) {
     grid-template-columns: repeat(3, 1fr);
