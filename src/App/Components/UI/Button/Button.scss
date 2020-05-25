@@ -1,0 +1,17 @@
+@import "../../../Common/Scss/main";
+
+.button {
+  display: inline-flex;
+  justify-content: center;
+  padding: 0.7rem 1rem;
+  background-color: $color_gray_dark;
+  border-radius: 0.5rem;
+  color: $color_white;
+  @include transition((background-color, color));
+
+  &:hover,
+  &:focus {
+    background-color: $color_gray_light;
+    color: $color_gray_dark;
+  }
+}

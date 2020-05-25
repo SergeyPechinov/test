@@ -1,0 +1,44 @@
+@import "../../../../Common/Scss/main";
+
+.shop-item-add {
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+
+  &__button-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+
+    &::after {
+      content: '';
+      position: relative;
+      display: block;
+      padding-bottom: 100%;
+    }
+  }
+
+  &__button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translateY(-50%) translateX(-50%);
+    max-width: 6rem;
+    max-height: 6rem;
+  }
+
+  &__button:hover,
+  &__button:focus {
+    .icon circle {
+      stroke: $color_gray_light;
+    }
+
+    .icon rect {
+      fill: $color_gray_light;
+    }
+  }
+}

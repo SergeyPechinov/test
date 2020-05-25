@@ -1,0 +1,51 @@
+@import "../../../../Common/Scss/main";
+
+.shop-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 3rem 1rem 1rem;
+  min-height: 150px;
+  width: 100%;
+  background-color: $color_gray;
+  border-radius: 1rem;
+  @include transition(box-shadow);
+  font-weight: 600;
+
+  &:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.35);
+  }
+
+  &__top {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    right: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__name {
+    text-align: center;
+  }
+
+  &__button-del {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover,
+    &:focus {
+      .icon path {
+        fill: $color_red;
+      }
+    }
+  }
+
+  &__button-add {
+    margin-top: 1rem;
+  }
+}

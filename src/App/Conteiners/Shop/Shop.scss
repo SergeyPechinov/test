@@ -1,0 +1,16 @@
+@import "../../Common/Scss/main";
+
+.shop {
+  @include container;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1rem;
+
+  @include media_interval($media450, $media768) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include media_interval(0, $media450) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

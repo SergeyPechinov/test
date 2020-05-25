@@ -6,9 +6,9 @@ import Header from "./Components/Header/Header";
 
 function App() {
 	return (
-			<div className="App">
+			<div className="app">
 				<Header/>
-				<main>
+				<main className="main">
 					<Switch>{router.map((props, index) => <Route key={index} {...props}/>)}</Switch>
 				</main>
 			</div>
