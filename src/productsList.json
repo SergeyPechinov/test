@@ -1,0 +1,39 @@
+{
+  "productsList": [
+    {
+      "id": 1,
+      "name": "Samsung Galaxy S1",
+      "price": "100"
+    },
+    {
+      "id": 2,
+      "name": "Samsung Galaxy S2",
+      "price": "200"
+    },
+    {
+      "id": 3,
+      "name": "Samsung Galaxy S3",
+      "price": "300"
+    },
+    {
+      "id": 4,
+      "name": "Samsung Galaxy S4",
+      "price": "400"
+    },
+    {
+      "id": 5,
+      "name": "Samsung Galaxy S5",
+      "price": "500"
+    },
+    {
+      "id": 6,
+      "name": "Samsung Galaxy S6",
+      "price": "500"
+    },
+    {
+      "id": 7,
+      "name": "Samsung Galaxy S7",
+      "price": "500"
+    }
+  ]
+}
