@@ -1,0 +1,52 @@
+@import "const";
+@import "breakpoints";
+
+//container
+@mixin container() {
+  box-sizing: border-box;
+  padding-right: 30px;
+  padding-left: 30px;
+  margin-right: auto;
+  margin-left: auto;
+
+  @include media_interval($media768, $media1024) {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  @include media_interval(0, $media768) {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+}
+
+//MEDIA
+@mixin media_interval($min, $max) {
+  @if $max == 0 {
+    @media (min-width: $min) {
+      @content;
+    }
+  } @else if $min == 0 {
+    @media (max-width: ($max - 1px)) {
+      @content;
+    }
+  } @else {
+    @media (min-width: $min) and (max-width: ($max - 1px)) {
+      @content;
+    }
+  }
+}
+
+//TRANSITION
+@mixin transition($properties: all, $duration: $transition_duration, $easing: $transition_easing) {
+  $transitionList: '';
+
+  @each $property in $properties {
+    @if ($transitionList == '') {
+      $transitionList: $property + ' ' + $duration + ' ' + $easing;
+    } @else {
+      $transitionList: $transitionList + ', ' + $property + ' ' + $duration + ' ' + $easing;
+    }
+  };
+  transition: $transitionList;
+}

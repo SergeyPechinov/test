@@ -1,5 +1,5 @@
 const initialState = {
-		list: require('../../productsList.json'),
+		list: require('../../Jsons/productsList.json'),
 };
 
 export const reducerProductsList = (state = initialState, action) => {
