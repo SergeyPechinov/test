@@ -1,0 +1,84 @@
+@import "../../Common/Scss/main";
+
+.basket {
+  @include container;
+
+  &__title {
+
+  }
+
+  &__total {
+    margin-top: 1rem;
+  }
+
+  &__total-price {
+    font-weight: 500;
+  }
+}
+
+.basket-list {
+  width: 75%;
+
+  @include media_interval(0, $media768) {
+    width: 100%;
+  }
+
+  &__item {
+    display: grid;
+    grid-template-columns: 7fr 2fr 2fr 1fr;
+    grid-gap: 1rem;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid $color_gray_dark;
+
+    @include media_interval(0, $media768) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__item-name {
+    font-weight: 600;
+  }
+
+  &__item-count-wrapper {
+    display: flex;
+    align-items: center;
+
+    @include media_interval(0, $media768) {
+      justify-content: flex-end;
+    }
+  }
+
+  &__item-button {
+    display: flex;
+    @include transition(opacity);
+
+    &:hover,
+    &:focus {
+      opacity: 0.7;
+    }
+  }
+
+  &__item-count {
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  &__item-price {
+    text-align: center;
+    font-weight: 600;
+  }
+
+  &__item-button-delete-wrapper {
+    text-align: right;
+  }
+
+  &__item-button-delete {
+    &:hover,
+    &:focus {
+      .icon path {
+        fill: $color_red;
+      }
+    }
+  }
+}
