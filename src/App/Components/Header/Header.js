@@ -7,7 +7,7 @@ const Header = props => {
 	return (
 			<header className="header">
 				<nav className="header__nav">
-					<NavLink to={"/"} className={"header__nav-item"}>Магазин</NavLink>
+					<NavLink to={"/"} className={"header__nav-item"}>Shop</NavLink>
 					<NavLink to={"/basket"} className={"header__nav-item nav-item-basket"}>
 						<div className="nav-item-basket">
 							<IconBasket/>

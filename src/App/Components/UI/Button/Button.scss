@@ -8,9 +8,11 @@
   border-radius: 0.5rem;
   color: $color_white;
   @include transition((background-color, color));
+  cursor: default;
 
-  &:hover,
-  &:focus {
+  &:hover:not([disabled]),
+  &:focus:not([disabled]) {
+    cursor: pointer;
     background-color: $color_gray_light;
     color: $color_gray_dark;
   }

@@ -1,6 +1,6 @@
 const initialState = {
-	list: require('../../Jsons/basket.json').basketList,
-	countProducts: require('../../Jsons/basket.json').countProducts,
+	list: [],
+	countProducts: 0,
 };
 
 export const reducerBasket = (state = initialState, action) => {

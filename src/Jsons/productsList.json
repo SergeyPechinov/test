@@ -1,5 +1,5 @@
 {
-  "productsList": [
+  "list": [
     {
       "id": 1,
       "name": "Samsung Galaxy S1",
@@ -35,5 +35,6 @@
       "name": "Samsung Galaxy S7",
       "price": "500"
     }
-  ]
+  ],
+  "lastId" : "7"
 }

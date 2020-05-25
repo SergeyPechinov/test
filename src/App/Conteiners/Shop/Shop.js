@@ -2,18 +2,19 @@ import React from "react";
 import "./Shop.scss";
 import ShopItem from "../../Components/Pages/Shop/ShopItem/ShopItem";
 import ShopItemAdd from "../../Components/Pages/Shop/ShopItemAdd/ShopItemAdd";
+import {useSelector} from "react-redux";
 
 const Shop = props => {
-	return(
+	const products = useSelector(state => state.productsList.list);
+
+	return (
 			<div className="shop">
-				<ShopItem/>
-				<ShopItem/>
-				<ShopItem/>
-				<ShopItem/>
-				<ShopItem/>
-				<ShopItem/>
-				<ShopItem/>
-				<ShopItem/>
+				{products.map((product, productIndex) => {
+					return (
+							<ShopItem product={product} key={productIndex}/>
+					);
+				})}
+
 				<ShopItemAdd/>
 			</div>
 	)
