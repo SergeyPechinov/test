@@ -4,7 +4,7 @@ import "./ShopItemAdd.scss";
 import IconPlus from "../../../../Icons/PlusCircle/PlusCircle";
 import {Link} from "react-router-dom";
 
-const ShopItemAdd = props => {
+const ShopItemAdd = () => {
 	return (
 			<div className="shop-item shop-item-add">
 				<div className="shop-item-add__button-wrapper">

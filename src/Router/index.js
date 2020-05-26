@@ -1,6 +1,6 @@
-import Shop from "../App/Conteiners/Shop/Shop";
-import Basket from "../App/Conteiners/Basket/Basket";
-import ProductAdd from "../App/Conteiners/ProductAdd/ProductAdd";
+import Shop from "../App/Containers/Shop/Shop";
+import Basket from "../App/Containers/Basket/Basket";
+import ProductAdd from "../App/Containers/ProductAdd/ProductAdd";
 
 export const router = [
 	{

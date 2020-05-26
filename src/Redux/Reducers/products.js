@@ -8,24 +8,26 @@ const initialState = {
 export const reducerProductsList = (state = initialState, action) => {
 	switch (action.type) {
 		case ADD_PRODUCT: {
-			const newList = JSON.parse(JSON.stringify(state.list));
+			const list = JSON.parse(JSON.stringify(state.list));
 
 			//вставляет в начало массива
-			newList.splice(0, 0, action.payload);
+			list.splice(0, 0, action.payload);
 
 			return {
 				...state,
-				list: newList,
+				list,
 				lastId: action.payload.id
 			};
 		}
 		case REMOVE_PRODUCT: {
-			const newList = JSON.parse(JSON.stringify(state.list));
-			newList.splice(newList.findIndex(item => item.id === action.payload), 1);
+			const list = JSON.parse(JSON.stringify(state.list));
+
+			//удаляет из массива
+			list.splice(list.findIndex(item => item.id === action.payload), 1);
 
 			return {
 				...state,
-				list: newList
+				list
 			}
 		}
 		default:

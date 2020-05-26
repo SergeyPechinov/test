@@ -7,7 +7,7 @@ import {addProduct} from "../../../Redux/Actions/products";
 import {useHistory} from "react-router";
 
 const ProductAdd = () => {
-	const [name, setName] = useState('123');
+	const [name, setName] = useState('');
 	const [price, setPrice] = useState('');
 
 	const handlerName = event => {
@@ -15,15 +15,19 @@ const ProductAdd = () => {
 	};
 
 	const handlerPrice = event => {
-		setPrice(event.target.value);
+		const value = event.target.value;
+
+		if (!isNaN(Number(value))) {
+			setPrice(value);
+		}
 	};
 
-	//if length less 1 symbol then button block
-	const [buttonDisabled, setButtonDisabled] = useState(true);
+	//если длина меньше 1 символа, то кнопка в disabled
+	const [filled, setFilled] = useState(true);
 
 	useEffect(() => {
-		name.length > 0 && price.length > 0 ? setButtonDisabled(false) : setButtonDisabled(true);
-	}, [name, price, buttonDisabled]);
+		name.length > 0 && price.length > 0 ? setFilled(false) : setFilled(true);
+	}, [name, price, filled]);
 
 	const dispatch = useDispatch();
 	const history = useHistory();
@@ -36,7 +40,7 @@ const ProductAdd = () => {
 			price
 		}));
 
-		//redirect to shop
+		//редирект в магазин
 		history.push('/');
 	};
 
@@ -45,7 +49,7 @@ const ProductAdd = () => {
 				<Input label="Name" value={name} onChange={handlerName} id="input-name"/>
 				<Input label="Price" value={price} onChange={handlerPrice} id="input-price"/>
 
-				<Button disabled={buttonDisabled} onClick={clickAddProduct}>Сохранить</Button>
+				<Button disabled={filled} onClick={clickAddProduct}>Сохранить</Button>
 			</div>
 	)
 };

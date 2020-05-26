@@ -4,12 +4,18 @@ import IconClose from "../../../../Icons/Close/Close";
 import Button from "../../../UI/Button/Button";
 import {useDispatch} from "react-redux";
 import {removeProduct} from "../../../../../Redux/Actions/products";
+import {addBasket, removeItemBasket} from "../../../../../Redux/Actions/basket";
 
 const ShopItem = props => {
 	const dispatch = useDispatch();
 
 	const clickRemoveProduct = id => {
 		dispatch(removeProduct(id));
+		dispatch(removeItemBasket(id));
+	};
+
+	const clickAddProduct = product => {
+		dispatch(addBasket(product));
 	};
 
 	return (
@@ -22,7 +28,14 @@ const ShopItem = props => {
 				</div>
 				<p className="shop-item__name">{props.product.name}</p>
 
-				<Button className="shop-item__button-add">Add</Button>
+				<Button
+						className="shop-item__button-add"
+						onClick={() => clickAddProduct({
+							id: props.product.id,
+							name: props.product.name,
+							price: props.product.price
+						})}
+				>Add</Button>
 			</div>
 	)
 };

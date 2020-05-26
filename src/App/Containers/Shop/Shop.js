@@ -4,7 +4,7 @@ import ShopItem from "../../Components/Pages/Shop/ShopItem/ShopItem";
 import ShopItemAdd from "../../Components/Pages/Shop/ShopItemAdd/ShopItemAdd";
 import {useSelector} from "react-redux";
 
-const Shop = props => {
+const Shop = () => {
 	const products = useSelector(state => state.productsList.list);
 
 	return (
