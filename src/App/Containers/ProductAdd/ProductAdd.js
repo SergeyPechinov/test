@@ -10,12 +10,20 @@ const ProductAdd = () => {
 	const [name, setName] = useState('');
 	const [price, setPrice] = useState('');
 
+	//если длина значения меньше 1, то добавлется error
+	const [filledName, setFilledName] = useState(false);
 	const handlerName = event => {
-		setName(event.target.value);
+		const value = event.target.value;
+		value.length > 0 ? setFilledName(true) : setFilledName(false);
+
+		setName(value);
 	};
 
+	const [filledPrice, setFilledPrice] = useState(false);
 	const handlerPrice = event => {
 		const value = event.target.value;
+
+		value.length > 0 ? setFilledPrice(true) : setFilledPrice(false);
 
 		if (!isNaN(Number(value))) {
 			setPrice(value);
@@ -23,11 +31,11 @@ const ProductAdd = () => {
 	};
 
 	//если длина меньше 1 символа, то кнопка в disabled
-	const [filled, setFilled] = useState(true);
+	const [filledForm, setFilledForm] = useState(true);
 
 	useEffect(() => {
-		name.length > 0 && price.length > 0 ? setFilled(false) : setFilled(true);
-	}, [name, price, filled]);
+		name.length > 0 && price.length > 0 ? setFilledForm(false) : setFilledForm(true);
+	}, [name, price, filledForm]);
 
 	const dispatch = useDispatch();
 	const history = useHistory();
@@ -46,10 +54,10 @@ const ProductAdd = () => {
 
 	return (
 			<div className="product-add">
-				<Input label="Name" value={name} onChange={handlerName} id="input-name"/>
-				<Input label="Price" value={price} onChange={handlerPrice} id="input-price"/>
+				<Input label="Name" value={name} onChange={handlerName} error={!filledName} id="input-name"/>
+				<Input label="Price" value={price} onChange={handlerPrice} error={!filledPrice} id="input-price"/>
 
-				<Button disabled={filled} onClick={clickAddProduct}>Сохранить</Button>
+				<Button disabled={filledForm} onClick={clickAddProduct}>Сохранить</Button>
 			</div>
 	)
 };

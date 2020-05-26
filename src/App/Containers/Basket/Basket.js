@@ -3,7 +3,7 @@ import "./Basket.scss";
 import BasketList from "../../Components/Pages/Basket/BasketList/BasketList";
 import {useSelector} from "react-redux";
 
-const Basket = props => {
+const Basket = () => {
 	const basket = useSelector(state => state.basket);
 
 	return (

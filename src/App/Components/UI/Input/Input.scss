@@ -11,9 +11,18 @@
     border: 1px solid $color_gray;
     @include transition(border);
 
-    &:hover,
-    &:focus {
+    &:hover:not(.error),
+    &:focus:not(.error) {
       border: 1px solid $color_gray_dark;
+    }
+
+    &.error {
+      border-color: $color_red;
+
+      &:hover,
+      &:focus {
+        border: 1px solid rgba($color_red, 0.4);
+      }
     }
   }
 }

@@ -5,8 +5,10 @@ const Input = props => {
 	const copyProps = {...props};
 	delete copyProps['id'];
 	delete copyProps['label'];
+	delete copyProps['error'];
 
 	props.className ? copyProps.className = `input__item ${props.className}` : copyProps.className = 'input__item';
+	if (props.error) copyProps.className += ' error';
 
 	return (
 		<div className="input">
